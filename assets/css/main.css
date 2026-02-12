@@ -155,14 +155,16 @@ h6 {
 .header .topbar .cta-btn:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
-
 .header .branding {
-  min-height: 60px;
-  padding: 5px 0;
+  min-height: 100px;
+  padding-top: 0;
+  padding-bottom: 5px;
+  margin-left: -15px;
 }
 
 .header .logo {
   line-height: 1;
+  margin-top: -20px;
 }
 
 
@@ -178,7 +180,7 @@ h6 {
 }
 
 .header .logo-img {
-  height: 60px;      /* 👈 AJUSTA ESTE VALOR */
+  height: 120px;      /* 👈 AJUSTA ESTE VALOR */
   width: auto;
 }
 
@@ -630,7 +632,7 @@ section.congelados {
 
 .hero .carousel {
   width: 100%;
-  min-height: 110vh;
+  min-height: 95vh;
   padding: 0;
   margin: 0;
   background-color: var(--background-color);
@@ -666,11 +668,12 @@ section.congelados {
 
 .hero .carousel-container {
   position: absolute;
-  bottom: 120px;   /* 👈 distancia desde abajo */
+  bottom: 180px;   /* 👈 distancia desde abajo */
   left: 64px;
   right: 64px;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 14px;
@@ -849,16 +852,19 @@ section.congelados {
 /* Mini grid SOLO para items especiales */
 .menu .menu-especial .precio-grid {
   display: grid;
-  grid-template-columns: 1fr auto; /* texto | precio */
+  grid-template-columns: auto auto;  /* 👈 antes 1fr auto */
   width: 100%;
-  margin-left: 20px;
+  margin-left: 0;                    /* 👈 quita el 20px */
   margin-top: 4px;
   align-items: center;
+  column-gap: 10px;
 }
+
 
 .menu .menu-especial .precio-grid .texto {
   font-size: 14px;
   color: var(--default-color);
+  
 }
 
 .menu .menu-especial .precio-grid .valor {
@@ -1784,4 +1790,31 @@ section.congelados {
 
 .footer .social-links .bi-whatsapp {
   color: #25D366;
+}
+
+/* Solo para Agua saborizada y Liso */
+.menu-especial .lineas-precio {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6px;
+  gap: 4px;
+}
+
+.menu-especial .lineas-precio .fila {
+  display: grid;
+  grid-template-columns: 1fr auto; /* texto | precio */
+  align-items: center;
+  column-gap: 12px;
+}
+
+.menu-especial .lineas-precio .texto {
+  text-align: left;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.menu-especial .lineas-precio .valor {
+  text-align: right;
+  font-weight: 700;
+  color: var(--accent-color);
 }
